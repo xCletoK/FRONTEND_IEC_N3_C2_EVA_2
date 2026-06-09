@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario Inicial</title>
+    <link rel="stylesheet" href="/css/bootstrap-slate.css" />
+    <link rel="stylesheet" href="/css/estilosformulario.css" />
+    <script src="/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script src="procesar_form.js"></script>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/cactus.ico"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">Navegacion...</div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col col-3"></div>
+        <div class="col col-9">
+          <form action="" method="post" id="frm-rg">
+            <div class="row">
+              <div class="col">
+                <h3>Formulario Registro</h3>
+              </div>
+            </div>
+            <br />
+
+            <div class="row mb-4">
+              <div class="col">
+                <label for="inp-nm" class="form-label">Nombre:</label>
+                <input
+                  type="text"
+                  class="form-control py-3"
+                  id="inp-nm"
+                  placeholder="Ingrese nombre usuario"
+                />
+              </div>
+              <div class="col">
+                <label for="inp-rt" class="form-label">RUT:</label>
+                <input
+                  type="text"
+                  class="form-control py-3"
+                  id="inp-rt"
+                  placeholder="Ingrese RUT usuario"
+                />
+              </div>
+              <div class="col">
+                <label for="inp-fn" class="form-label">Fecha Nacimiento:</label>
+                <input type="date" class="form-control py-3" id="inp-fn" />
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col">
+                <label for="inp-cv" class="form-label">Curriculum Vitae:</label>
+                <input
+                  type="file"
+                  class="form-control py-3"
+                  id="inp-cv"
+                  accept=".pdf,.docx"
+                />
+              </div>
+              <div class="col">
+                <label for="inp-em" class="form-label">Email:</label>
+                <input
+                  type="email"
+                  class="form-control py-3"
+                  id="inp-em"
+                  placeholder="Ingrese email usuario"
+                />
+              </div>
+              <div class="col">
+                <p class="form-label">Seleccione Género:</p>
+                <div class="form-check mt-2">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="rd-gn"
+                    id="rd-m"
+                    value="M"
+                    checked
+                  />
+                  <label class="form-check-label" for="rd-m">Masculino</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="rd-gn"
+                    id="rd-f"
+                    value="F"
+                  />
+                  <label class="form-check-label" for="rd-f">Femenino</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="rd-gn"
+                    id="rd-o"
+                    value="O"
+                  />
+                  <label class="form-check-label" for="rd-o">Otro</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mb-4">
+              <div class="col">
+                <label for="inp-ps" class="form-label">Contraseña:</label>
+                <input
+                  type="password"
+                  class="form-control py-3"
+                  id="inp-ps"
+                  placeholder="Ingrese contraseña"
+                />
+              </div>
+              <div class="col">
+                <label for="inp-cp" class="form-label"
+                  >Confirme Contraseña:</label
+                >
+                <input
+                  type="password"
+                  class="form-control py-3"
+                  id="inp-cp"
+                  placeholder="Confirme contraseña"
+                />
+              </div>
+              <div class="col"></div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col"></div>
+              <div class="col text-end">
+                <input
+                  type="button"
+                  onclick="limpiarFormulario()"
+                  class="btn btn-secondary btn-cn"
+                  value="Cancelar"
+                />
+                <input
+                  type="button"
+                  onclick="validarFormulario()"
+                  class="btn btn-primary btn-ev"
+                  value="Enviar"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
