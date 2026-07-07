@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario Registro</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <title>Formulario Inicial</title>
+    <link rel="stylesheet" href="/css/brite.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
@@ -15,137 +15,128 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./css/estilos_formulario.css" />
+
     <script src="/js/bootstrap.min.js"></script>
     <script src="./js/procesar_form.js"></script>
   </head>
-  <body style="background-color: #f8f9fa">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-      <div class="container">
-        <a class="navbar-brand" href="#">WebApp JS</a>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio (Usuarios)</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="formulario.html"
-                >Registro Nuevo</a
-              >
-            </li>
-          </ul>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <br />
+          <a href="index.html">Inicio</a> |
+          <a href="formulario.html">Registro Nuevo</a> <br /><br />
         </div>
       </div>
-    </nav>
-
-    <div class="container pb-5">
+    </div>
+    <div class="container">
       <div class="row">
-        <div class="col col-md-8 mx-auto">
-          <form
-            id="miFormulario"
-            action=""
-            method="post"
-            class="card p-4 shadow-sm"
-          >
-            <div class="row mb-3">
+        <div class="col col-3"></div>
+        <div class="col col-9">
+          <form id="miForm" action="" method="post">
+            <div class="row">
               <div class="col">
-                <h3>Crear Nuevo Usuario</h3>
-                <hr />
+                <h3>Formulario Registro</h3>
               </div>
             </div>
+            <br />
 
-            <div class="row mb-3">
+            <div class="row">
               <div class="col">
                 <label for="input_nombre" class="form-label">Nombre:</label>
                 <input
                   type="text"
                   class="form-control"
+                  name=""
                   id="input_nombre"
-                  placeholder="Ingrese nombre completo"
+                  placeholder="Ingrese nombre"
                   onchange="validarInput(this)"
                 />
                 <div
-                  class="alert alert-danger mt-1 p-2"
+                  class="alert alert-danger"
                   role="alert"
                   id="alertaNombre"
                 ></div>
               </div>
-            </div>
-
-            <div class="row mb-3">
               <div class="col">
                 <label for="input_usuario" class="form-label">Usuario:</label>
                 <input
                   type="text"
                   class="form-control"
+                  name=""
                   id="input_usuario"
-                  placeholder="Ingrese nombre de usuario"
+                  placeholder="Ingrese usuario"
                   onchange="validarInput(this)"
                 />
                 <div
-                  class="alert alert-danger mt-1 p-2"
+                  class="alert alert-danger"
                   role="alert"
                   id="alertaUsuario"
                 ></div>
               </div>
             </div>
+            <br />
 
-            <div class="row mb-3">
-              <div class="col">
-                <label for="input_fecha" class="form-label"
-                  >Fecha de Ingreso:</label
-                >
-                <input
-                  type="date"
-                  class="form-control"
-                  id="input_fecha"
-                  onchange="validarInput(this)"
-                />
-                <div
-                  class="alert alert-danger mt-1 p-2"
-                  role="alert"
-                  id="alertaFecha"
-                ></div>
-              </div>
-            </div>
-
-            <div class="row mb-3">
+            <div class="row">
               <div class="col">
                 <label for="input_email" class="form-label">Email:</label>
                 <input
                   type="email"
                   class="form-control"
+                  name=""
                   id="input_email"
                   placeholder="usuario@servidor.dom"
                   onchange="validarEmail(this)"
                 />
                 <div
-                  class="alert alert-danger mt-1 p-2"
+                  class="alert alert-danger"
                   role="alert"
                   id="alertaEmail"
                 ></div>
               </div>
             </div>
+            <br />
 
-            <div class="row mb-3">
+            <div class="row">
               <div class="col">
-                <label for="input_web" class="form-label"
-                  >Sitio Web (Opcional):</label
+                <label for="input_fecha" class="form-label"
+                  >Fecha Ingreso:</label
                 >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="input_fecha"
+                  name=""
+                  onchange="validarInput(this)"
+                />
+                <div
+                  class="alert alert-danger"
+                  role="alert"
+                  id="alertaFecha"
+                ></div>
+              </div>
+
+              <div class="col">
+                <label for="input_web" class="form-label">Sitio Web:</label>
                 <input
                   type="url"
                   class="form-control"
                   id="input_web"
+                  name=""
                   placeholder="https://www.ejemplo.com"
-                  onchange="validarWeb(this)"
+                  onchange="validarInput(this)"
                 />
                 <div
-                  class="alert alert-danger mt-1 p-2"
+                  class="alert alert-danger"
                   role="alert"
                   id="alertaWeb"
                 ></div>
               </div>
             </div>
+            <br />
 
+            <br />
             <div class="row">
               <div class="col d-flex justify-content-end">
                 <button
