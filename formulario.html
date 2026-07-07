@@ -1,161 +1,167 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario Inicial</title>
-    <link rel="stylesheet" href="/css/bootstrap-slate.css" />
-    <link rel="stylesheet" href="/css/estilosformulario.css" />
-    <script src="/js/bootstrap.min.js"></script>
+    <title>Formulario Registro</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <script src="procesar_form.js"></script>
     <link
       rel="shortcut icon"
       href="./assets/images/cactus.ico"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="./css/estilos_formulario.css" />
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="./js/procesar_form.js"></script>
   </head>
-
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col">Navegacion...</div>
+  <body style="background-color: #f8f9fa">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+      <div class="container">
+        <a class="navbar-brand" href="#">WebApp JS</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Inicio (Usuarios)</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="formulario.html"
+                >Registro Nuevo</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="container mt-4">
+    </nav>
+
+    <div class="container pb-5">
       <div class="row">
-        <div class="col col-3"></div>
-        <div class="col col-9">
-          <form action="" method="post" id="frm-rg">
-            <div class="row">
+        <div class="col col-md-8 mx-auto">
+          <form
+            id="miFormulario"
+            action=""
+            method="post"
+            class="card p-4 shadow-sm"
+          >
+            <div class="row mb-3">
               <div class="col">
-                <h3>Formulario Registro</h3>
+                <h3>Crear Nuevo Usuario</h3>
+                <hr />
               </div>
             </div>
-            <br />
 
-            <div class="row mb-4">
+            <div class="row mb-3">
               <div class="col">
-                <label for="inp-nm" class="form-label">Nombre:</label>
+                <label for="input_nombre" class="form-label">Nombre:</label>
                 <input
                   type="text"
-                  class="form-control py-3"
-                  id="inp-nm"
-                  placeholder="Ingrese nombre usuario"
+                  class="form-control"
+                  id="input_nombre"
+                  placeholder="Ingrese nombre completo"
+                  onchange="validarInput(this)"
                 />
+                <div
+                  class="alert alert-danger mt-1 p-2"
+                  role="alert"
+                  id="alertaNombre"
+                ></div>
               </div>
+            </div>
+
+            <div class="row mb-3">
               <div class="col">
-                <label for="inp-rt" class="form-label">RUT:</label>
+                <label for="input_usuario" class="form-label">Usuario:</label>
                 <input
                   type="text"
-                  class="form-control py-3"
-                  id="inp-rt"
-                  placeholder="Ingrese RUT usuario"
+                  class="form-control"
+                  id="input_usuario"
+                  placeholder="Ingrese nombre de usuario"
+                  onchange="validarInput(this)"
                 />
-              </div>
-              <div class="col">
-                <label for="inp-fn" class="form-label">Fecha Nacimiento:</label>
-                <input type="date" class="form-control py-3" id="inp-fn" />
+                <div
+                  class="alert alert-danger mt-1 p-2"
+                  role="alert"
+                  id="alertaUsuario"
+                ></div>
               </div>
             </div>
 
-            <div class="row mb-4">
+            <div class="row mb-3">
               <div class="col">
-                <label for="inp-cv" class="form-label">Curriculum Vitae:</label>
-                <input
-                  type="file"
-                  class="form-control py-3"
-                  id="inp-cv"
-                  accept=".pdf,.docx"
-                />
-              </div>
-              <div class="col">
-                <label for="inp-em" class="form-label">Email:</label>
-                <input
-                  type="email"
-                  class="form-control py-3"
-                  id="inp-em"
-                  placeholder="Ingrese email usuario"
-                />
-              </div>
-              <div class="col">
-                <p class="form-label">Seleccione Género:</p>
-                <div class="form-check mt-2">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="rd-gn"
-                    id="rd-m"
-                    value="M"
-                    checked
-                  />
-                  <label class="form-check-label" for="rd-m">Masculino</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="rd-gn"
-                    id="rd-f"
-                    value="F"
-                  />
-                  <label class="form-check-label" for="rd-f">Femenino</label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="rd-gn"
-                    id="rd-o"
-                    value="O"
-                  />
-                  <label class="form-check-label" for="rd-o">Otro</label>
-                </div>
-              </div>
-            </div>
-
-            <div class="row mb-4">
-              <div class="col">
-                <label for="inp-ps" class="form-label">Contraseña:</label>
-                <input
-                  type="password"
-                  class="form-control py-3"
-                  id="inp-ps"
-                  placeholder="Ingrese contraseña"
-                />
-              </div>
-              <div class="col">
-                <label for="inp-cp" class="form-label"
-                  >Confirme Contraseña:</label
+                <label for="input_fecha" class="form-label"
+                  >Fecha de Ingreso:</label
                 >
                 <input
-                  type="password"
-                  class="form-control py-3"
-                  id="inp-cp"
-                  placeholder="Confirme contraseña"
+                  type="date"
+                  class="form-control"
+                  id="input_fecha"
+                  onchange="validarInput(this)"
                 />
+                <div
+                  class="alert alert-danger mt-1 p-2"
+                  role="alert"
+                  id="alertaFecha"
+                ></div>
               </div>
-              <div class="col"></div>
             </div>
 
-            <div class="row mt-4">
-              <div class="col"></div>
-              <div class="col text-end">
+            <div class="row mb-3">
+              <div class="col">
+                <label for="input_email" class="form-label">Email:</label>
                 <input
-                  type="button"
-                  onclick="limpiarFormulario()"
-                  class="btn btn-secondary btn-cn"
-                  value="Cancelar"
+                  type="email"
+                  class="form-control"
+                  id="input_email"
+                  placeholder="usuario@servidor.dom"
+                  onchange="validarEmail(this)"
                 />
+                <div
+                  class="alert alert-danger mt-1 p-2"
+                  role="alert"
+                  id="alertaEmail"
+                ></div>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col">
+                <label for="input_web" class="form-label"
+                  >Sitio Web (Opcional):</label
+                >
                 <input
+                  type="url"
+                  class="form-control"
+                  id="input_web"
+                  placeholder="https://www.ejemplo.com"
+                  onchange="validarWeb(this)"
+                />
+                <div
+                  class="alert alert-danger mt-1 p-2"
+                  role="alert"
+                  id="alertaWeb"
+                ></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col d-flex justify-content-end">
+                <button
+                  type="button"
+                  onclick="cancelarFormulario()"
+                  class="btn btn-secondary me-2"
+                >
+                  Cancelar
+                </button>
+                <button
                   type="button"
                   onclick="validarFormulario()"
-                  class="btn btn-primary btn-ev"
-                  value="Enviar"
-                />
+                  class="btn btn-primary"
+                >
+                  Enviar
+                </button>
               </div>
             </div>
           </form>
